@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+<h2>Redis Cache Test Sayfası</h2>
+
+@if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}
+
+<form asp-action="SetCache" method="post">
+    <label>Key:</label>
+    <input type="text" name="key" required />
+    <label>Value:</label>
+    <input type="text" name="value" required />
+    <button type="submit">Veriyi Kaydet</button>
+</form>
+
+<form asp-action="GetCache" method="get">
+    <label>Key:</label>
+    <input type="text" name="key" required />
+    <button type="submit">Veriyi Getir</button>
+</form>
+
+<form asp-action="RemoveCache" method="post">
+    <label>Key:</label>
+    <input type="text" name="key" required />
+    <button type="submit">Veriyi Sil</button>
+</form>
